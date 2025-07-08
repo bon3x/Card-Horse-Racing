@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>纸牌赛马游戏</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>纸牌赛马游戏</h1>
+        <div class="track-container">
+            <div class="track">
+                <div class="level" data-level="1">?</div>
+                <div class="level" data-level="2">?</div>
+                <div class="level" data-level="3">?</div>
+                <div class="level" data-level="4">?</div>
+                <div class="level" data-level="5">?</div>
+            </div>
+            <div class="horses">
+                <div class="horse hearts" data-suit="hearts">♥</div>
+                <div class="horse diamonds" data-suit="diamonds">♦</div>
+                <div class="horse clubs" data-suit="clubs">♣</div>
+                <div class="horse spades" data-suit="spades">♠</div>
+            </div>
+        </div>
+        <div class="card-area">
+            <div class="deck">牌库</div>
+            <button id="draw-card">抽牌</button>
+            <div class="drawn-card"></div>
+        </div>
+        <div class="status">游戏状态: 等待开始</div>
+        <div class="winner-popup" id="winnerPopup">
+            <div class="popup-content">
+                <h2 id="winnerText"></h2>
+                <button id="closePopup">关闭</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/game.js"></script>
+</body>
+</html>
