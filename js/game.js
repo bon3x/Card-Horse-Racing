@@ -121,10 +121,33 @@ document.addEventListener('DOMContentLoaded', () => {
         game.moveHorse(card);
         
         const suitToFileName = { hearts: 'Heart', diamonds: 'Diamond', clubs: 'Club', spades: 'Spade' };
-        drawnCardElement.innerHTML = `<img src="./asset/Card-${suitToFileName[card]}.png" alt="${card} card">`;
-        
         const suitNames = { hearts: '红桃', diamonds: '方块', clubs: '梅花', spades: '黑桃' };
-        statusElement.textContent = `抽到了${suitNames[card]}，${suitNames[card]}前进了一步!`;
+        
+        // 创建动画卡牌元素
+        const cardAnimation = document.createElement('div');
+        cardAnimation.className = 'card-animation';
+        cardAnimation.innerHTML = `
+            <div class="card-back"></div>
+            <div class="card-front">
+                <img src="./asset/Card-${suitToFileName[card]}.png" alt="${card} card" style="width: 93px; height: 129px; object-fit: cover;">
+            </div>
+        `;
+        
+        // 获取牌堆元素并添加动画卡牌
+        const deckElement = document.querySelector('.deck');
+        deckElement.appendChild(cardAnimation);
+        
+        // 触发回流后添加翻转类以启动动画
+        setTimeout(() => {
+            cardAnimation.classList.add('card-flipped');
+        }, 10);
+        
+        // 动画结束后更新显示
+        cardAnimation.addEventListener('transitionend', () => {
+            drawnCardElement.innerHTML = `<img src="./asset/Card-${suitToFileName[card]}.png" alt="${card} card" style="width: 93px; height: 129px; object-fit: cover;">`;
+            statusElement.textContent = `抽到了${suitNames[card]}, ${suitNames[card]}前进了一步!`;
+            deckElement.removeChild(cardAnimation);
+        }, { once: true });
     });
 
     game.updateHorsePositions();
