@@ -191,7 +191,7 @@
 .drawn-card {
     width: 91px;
     height: 129px;
-    background-image: url('./asset/CardBack.png');
+    background-image: url('./asset/CardBack.PNG');
     background-size: 30% 30%;
     border-radius: 5px;
     display: flex;
