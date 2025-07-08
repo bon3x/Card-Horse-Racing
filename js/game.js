@@ -67,7 +67,7 @@ class Game {
         const levelElement = document.querySelector(`.level[data-level="${index + 1}"]`);
         const suitToFileName = { hearts: 'Heart', diamonds: 'Diamond', clubs: 'Club', spades: 'Spade' };
         const frontFace = levelElement.querySelector('.level-front');
-        frontFace.innerHTML = `<img src="/e:/Desktop/Design/Game/Card-Horse-Racing/asset/Card-${suitToFileName[suit]}.png" alt="${suit} card" style="width: 100%; height: 100%; object-fit: cover;">`;
+        frontFace.innerHTML = `<img src="./asset/Card-${suitToFileName[suit]}.png" alt="${suit} card" style="width: 100%; height: 100%; object-fit: cover;">`;
         levelElement.classList.add('flipped');
     }
 
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         game.moveHorse(card);
         
         const suitToFileName = { hearts: 'Heart', diamonds: 'Diamond', clubs: 'Club', spades: 'Spade' };
-        drawnCardElement.innerHTML = `<img src="/e:/Desktop/Design/Game/Card-Horse-Racing/asset/Card-${suitToFileName[card]}.png" alt="${card} card">`;
+        drawnCardElement.innerHTML = `<img src="./asset/Card-${suitToFileName[card]}.png" alt="${card} card">`;
         
         const suitNames = { hearts: '红桃', diamonds: '方块', clubs: '梅花', spades: '黑桃' };
         statusElement.textContent = `抽到了${suitNames[card]}，${suitNames[card]}前进了一步!`;
