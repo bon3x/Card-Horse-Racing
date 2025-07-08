@@ -65,9 +65,10 @@ class Game {
 
     revealLevelCard(index, suit) {
         const levelElement = document.querySelector(`.level[data-level="${index + 1}"]`);
-        const suitSymbols = { hearts: '♥', diamonds: '♦', clubs: '♣', spades: '♠' };
-        levelElement.textContent = suitSymbols[suit];
-        levelElement.style.backgroundColor = this.getSuitColor(suit);
+        const suitToFileName = { hearts: 'Heart', diamonds: 'Diamond', clubs: 'Club', spades: 'Spade' };
+        const frontFace = levelElement.querySelector('.level-front');
+        frontFace.innerHTML = `<img src="/e:/Desktop/Design/Game/Card-Horse-Racing/asset/Card-${suitToFileName[suit]}.png" alt="${suit} card" style="width: 100%; height: 100%; object-fit: cover;">`;
+        levelElement.classList.add('flipped');
     }
 
     getSuitColor(suit) {
@@ -119,11 +120,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = game.drawCard();
         game.moveHorse(card);
         
-        const suitSymbols = { hearts: '♥', diamonds: '♦', clubs: '♣', spades: '♠' };
-        drawnCardElement.textContent = suitSymbols[card];
-        drawnCardElement.style.color = game.getSuitColor(card);
+        const suitToFileName = { hearts: 'Heart', diamonds: 'Diamond', clubs: 'Club', spades: 'Spade' };
+        drawnCardElement.innerHTML = `<img src="/e:/Desktop/Design/Game/Card-Horse-Racing/asset/Card-${suitToFileName[card]}.png" alt="${card} card">`;
         
-        statusElement.textContent = `抽到了${suitSymbols[card]}，${card === 'hearts' ? '红桃' : card === 'diamonds' ? '方块' : card === 'clubs' ? '梅花' : '黑桃'}前进了一步!`;
+        const suitNames = { hearts: '红桃', diamonds: '方块', clubs: '梅花', spades: '黑桃' };
+        statusElement.textContent = `抽到了${suitNames[card]}，${suitNames[card]}前进了一步!`;
     });
 
     game.updateHorsePositions();

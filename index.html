@@ -3,31 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>纸牌赛马游戏</title>
+    <title>Derbino</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-<body>
+<body style="min-width: 856px;">
     <div class="game-container">
-        <h1>纸牌赛马游戏</h1>
+        <h1><b>DERBINO</b></h1>
         <div class="track-container">
+            <img src="./asset/grass.png" class="runway" alt="跑道">
+            <img src="./asset/FinishLine.png" class="finish-line" alt="终点线">
             <div class="track">
-                <div class="level" data-level="1">?</div>
-                <div class="level" data-level="2">?</div>
-                <div class="level" data-level="3">?</div>
-                <div class="level" data-level="4">?</div>
-                <div class="level" data-level="5">?</div>
+                <div class="level-container">
+                    <div class="level" data-level="1">
+                        <div class="level-back"><img src="./asset/CardBack.PNG" alt="卡背" style="width: 62px; height: 86px;"></div>
+                        <div class="level-front"></div>
+                    </div>
+                </div>
+                <div class="level-container">
+                    <div class="level" data-level="2">
+                        <div class="level-back"><img src="./asset/CardBack.PNG" alt="卡背" style="width: 62px; height: 86px;"></div>
+                        <div class="level-front"></div>
+                    </div>
+                </div>
+                <div class="level-container">
+                    <div class="level" data-level="3">
+                        <div class="level-back"><img src="./asset/CardBack.PNG" alt="卡背" style="width: 62px; height: 86px;"></div>
+                        <div class="level-front"></div>
+                    </div>
+                </div>
+                <div class="level-container">
+                    <div class="level" data-level="4">
+                        <div class="level-back"><img src="./asset/CardBack.PNG" alt="卡背" style="width: 62px; height: 86px;"></div>
+                        <div class="level-front"></div>
+                    </div>
+                </div>
+                <div class="level-container">
+                    <div class="level" data-level="5">
+                        <div class="level-back"><img src="./asset/CardBack.PNG" alt="卡背" style="width: 62px; height: 86px;"></div>
+                        <div class="level-front"></div>
+                    </div>
+                </div>
             </div>
             <div class="horses">
-                <div class="horse hearts" data-suit="hearts">♥</div>
-                <div class="horse diamonds" data-suit="diamonds">♦</div>
-                <div class="horse clubs" data-suit="clubs">♣</div>
-                <div class="horse spades" data-suit="spades">♠</div>
+                <div class="horse hearts" data-suit="hearts"><img src="./asset/Horse-Heart.png" alt="红桃马"></div>
+                <div class="horse diamonds" data-suit="diamonds"><img src="./asset/Horse-Diamond.png" alt="方块马"></div>
+                <div class="horse clubs" data-suit="clubs"><img src="./asset/Horse-Club.png" alt="梅花马"></div>
+                <div class="horse spades" data-suit="spades"><img src="./asset/Horse-Spade.png" alt="黑桃马"></div>
             </div>
         </div>
         <div class="card-area">
-            <div class="deck">牌库</div>
+            <div class="deck"><img src="./asset/CardBack.PNG" alt="卡背"></div>
             <button id="draw-card">抽牌</button>
-            <div class="drawn-card"></div>
+            <div class="drawn-card"><img src="./asset/CardBack.png" alt="抽牌"></div>
         </div>
         <div class="status">游戏状态: 等待开始</div>
         <div class="winner-popup" id="winnerPopup">
