@@ -43,7 +43,9 @@
 .track {
     display: flex;
     justify-content: space-between;
+    padding-left: 20px;
     height: 100px;
+    width: 500px;
     border-bottom: 2px dashed #333;
     z-index: 99;
     perspective: 1000px;

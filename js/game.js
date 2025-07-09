@@ -26,7 +26,7 @@ class Game {
     createDeck() {
         const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
         let deck = [];
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 5; i++) {
             suits.forEach(suit => deck.push(suit));
         }
         return deck.sort(() => Math.random() - 0.5);
@@ -85,14 +85,14 @@ class Game {
         Object.keys(this.horses).forEach(suit => {
             const horseElement = document.querySelector(`.horse[data-suit="${suit}"]`);
             const position = this.horses[suit];
-            const percentage = (position / 5) * 100;
+            const percentage = (position / 7) * 100;
             horseElement.style.left = `${percentage}%`;
         });
     }
 
     checkWinner() {
         for (const [suit, position] of Object.entries(this.horses)) {
-            if (position >= 5) {
+            if (position >= 6) {
                 this.isGameOver = true;
                 const suitNames = { hearts: '红桃', diamonds: '方块', clubs: '梅花', spades: '黑桃' };
                 const winnerPopup = document.getElementById('winnerPopup');
